@@ -4,6 +4,7 @@
  *
  *  Created on: Nov 5, 2017
  *      Author: keith
+ *      Finished by: ben
  */
 #include <iostream>
 #include <memory>
@@ -23,12 +24,29 @@ std::vector<std::unique_ptr<Smalltalk>> getPeople(int numBrit,
 		int numWatches) {
 	
 	//create a vector to hold SmallTalk unique pointers
-
+	std::vector<std::unique_ptr<Smalltalk>> myVector;
 		//add brits to vector
+	for(int b = 0; b < numBrit; b++){
 
-		//add americans  to vector
+	}
 
-		//add american donut enthusiest  to vector
+	//add americans  to vector
+	for(int a = 0; a < numAmerican; a++){
+
+	}
+
+	//add american donut enthusiest  to vector
+	for (int d = 0; d < numbAmericanDonutEnthusiest; d++){
+
+	}
+
+	if (numWatches <= (numBrit + numAmerican + numbAmericanDonutEnthusiest)){
+		for(int w = 0; w < numWatches; w++){
+
+		}
+	}
+
+
 
 		//create some watches (as long as number watches <= numb people)
 		//then give the watches away to first NUM_WATCHES people in the vector
@@ -36,4 +54,5 @@ std::vector<std::unique_ptr<Smalltalk>> getPeople(int numBrit,
 		//from this function(see Smalltalk header for hints)
 
 		//return your vector
+	return myVector;
 }
