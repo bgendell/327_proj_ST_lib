@@ -47,7 +47,9 @@ std::string Smalltalk::getTime(){
 //if this object has a watch it is taken away, otherwise an empty unique_ptr is returned
 // This transaction simulates giving away a watch
 std::unique_ptr<Watch>  Smalltalk::takeWatch(){
-	return nullptr;
+	this->giveWatch(this->pWatch);
+	this->pWatch.reset(0);
+	return std::move(this->pWatch);
 }
 
 bool Smalltalk::giveWatch(std::unique_ptr<Watch> &watch){
