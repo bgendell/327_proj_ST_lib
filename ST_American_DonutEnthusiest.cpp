@@ -16,8 +16,6 @@ ST_American_DonutEnthusiest::ST_American_DonutEnthusiest(int _iPerson):Smalltalk
 }
 
 ST_American_DonutEnthusiest::~ST_American_DonutEnthusiest(void){
-	//nationality = "";
-	//iPerson = 0;
 }
 void ST_American_DonutEnthusiest::populatePhrases(){
 	ST_American_DonutEnthusiest::mySmallTalk.push_back(AMERICAN_DE_PHRASE_1);

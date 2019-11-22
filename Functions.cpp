@@ -25,7 +25,8 @@ std::vector<std::unique_ptr<Smalltalk>> getPeople(int numBrit,
 	
 	//create a vector to hold SmallTalk unique pointers
 	std::vector<std::unique_ptr<Smalltalk>> myVector;
-		//add brits to vector
+
+	//add brits to vector
 	for(int b = 0; b < numBrit; b++){
 		std::unique_ptr<Smalltalk> temp(new Smalltalk_Brit(b));
 		myVector.push_back(std::move(temp));
@@ -46,11 +47,12 @@ std::vector<std::unique_ptr<Smalltalk>> getPeople(int numBrit,
 
 	}
 
-		//create some watches (as long as number watches <= numb people)
-		//then give the watches away to first NUM_WATCHES people in the vector
-		// when you are finished using the vector you return
-		//from this function(see Smalltalk header for hints)
-	if(numWatches <= numBrit + numAmerican + numbAmericanDonutEnthusiest){
+	//create some watches (as long as number watches <= numb people)
+	//then give the watches away to first NUM_WATCHES people in the vector
+	// when you are finished using the vector you return
+	//from this function(see Smalltalk header for hints)
+	int numPeople = numBrit + numAmerican + numbAmericanDonutEnthusiest;
+	if(numWatches <= numPeople){
 		for(int w = 0; w < numWatches; w++){
 			std::unique_ptr<Watch> newWatch(new Watch);
 			Smalltalk* current = myVector[w].get();
@@ -59,9 +61,8 @@ std::vector<std::unique_ptr<Smalltalk>> getPeople(int numBrit,
 			}
 		}
 	}
-
-	if(numWatches > numBrit + numAmerican + numbAmericanDonutEnthusiest){
-		for(int w = 0; w < numBrit + numAmerican + numbAmericanDonutEnthusiest; w++){
+	else{
+		for(int w = 0; w < numPeople; w++){
 			std::unique_ptr<Watch> newWatch(new Watch);
 			Smalltalk* current = myVector[w].get();
 			if(current->getTime() == I_DO_NOT_HAVE_A_WATCH){
@@ -69,6 +70,6 @@ std::vector<std::unique_ptr<Smalltalk>> getPeople(int numBrit,
 			}
 		}
 	}
-		//return your vector
+	//return your vector
 	return myVector;
 }
